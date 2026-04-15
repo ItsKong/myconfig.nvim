@@ -12,6 +12,7 @@ return {
       },
     },
     config = function()
+      local actions = require("telescope.actions")
       require("telescope").setup({
         defaults = {
           file_ignore_patterns = {
@@ -24,10 +25,21 @@ return {
             require("telescope.themes").get_dropdown({}),
           },
         },
+        pickers = {
+          buffers = {
+            mappings = {
+              n = {
+                ["D"] = actions.delete_buffer,
+              }
+            }
+          }
+        }
       })
       local builtin = require("telescope.builtin")
       vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-      vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+      vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = "Find Files"})
+      vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "Find Livegrep"})
+      vim.keymap.set('n', '<leader>fb', "<cmd>Telescope buffers<cr>", { desc = "Buffers (all)" })
     end
   },
   {

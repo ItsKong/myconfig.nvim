@@ -3,12 +3,22 @@ return {
   lazy = false,
   build = ':TSUpdate',
   config = function()
-    local configs = require("nvim-treesitter")
-    configs.setup({
-      ensure_installed = {"lua"},
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
+    local ts = require("nvim-treesitter")
+    vim.env.CC = "gcc"
+
+    local languages =  {
+      "bash",
+      "javascript",
+      "json",
+      "lua",
+      "python",
+      "tsx",
+      "typescript",
+      "vim",
+      "yaml",
+    }
+
+    ts.install(languages)
   end
 }
 
