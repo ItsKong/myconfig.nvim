@@ -3,11 +3,11 @@ return {
 		"akinsho/toggleterm.nvim",
 		version = "*",
 		opts = {
-			size = 10,
+			size = 80,
 			open_mapping = [[<c-\>]],
 			shade_filetypes = {},
 			hide_numbers = true, -- hide the number column in toggleterm buffers
-			direction = "horizontal",
+			direction = "vertical",
 		},
 		config = function(_, opts)
 			require("toggleterm").setup(opts)
