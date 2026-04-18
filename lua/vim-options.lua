@@ -27,3 +27,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("v", "<leader>y", "\"+y", {desc = "+yank -> sys"})
 vim.keymap.set("n", "<leader>y", "\"+y",{desc = "+yank -> sys"})
 vim.keymap.set("n", "<leader>Y", "\"+Y",{desc = "+Yank (paragraph) -> sys"})
+
+-- comment
+vim.keymap.set('n', '<C-_>', 'gcc', { remap = true })
+vim.keymap.set('v', '<C-_>', 'gc', { remap = true })
